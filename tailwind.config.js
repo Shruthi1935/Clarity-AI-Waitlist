@@ -1,18 +1,13 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
- 
-const colors = require("tailwindcss/colors");
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
-
 /** @type {import('tailwindcss').Config} */
+const flattenColorPalette = require("tailwindcss/lib/util/flattenColorPalette").default;
+
 module.exports = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{js,jsx}',
     './components/**/*.{js,jsx}',
     './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    './src/**/*.{js,jsx,ts,tsx}', // Added TS and TSX for TypeScript files
   ],
   prefix: "",
   theme: {
@@ -24,15 +19,20 @@ module.exports = {
       },
     },
     extend: {
-      boxShadow: {
-        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      textShadow: {
+        'custom': '4px 4px 4px #000000', // Define the text shadow here
       },
-      animation: {
-        first: "moveVertical 30s ease infinite",
-        second: "moveInCircle 20s reverse infinite",
-        third: "moveInCircle 40s linear infinite",
-        fourth: "moveHorizontal 40s ease infinite",
-        fifth: "moveInCircle 20s ease infinite",
+      fontFamily: {
+        chillax: ['Chillax', 'sans-serif'], // Custom font family 1
+        axiforma: ['Axiforma', 'sans-serif'], // Custom font family 2
+      },
+      fontWeight: {
+        extralight: 200,
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
       },
       colors: {
         border: "hsl(var(--border))",
@@ -74,7 +74,6 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-
       keyframes: {
         moveHorizontal: {
           "0%": {
@@ -109,8 +108,6 @@ module.exports = {
             transform: "translateY(-50%)",
           },
         },
-
-
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -119,26 +116,45 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
+        first: "moveVertical 30s ease infinite",
+        second: "moveInCircle 20s reverse infinite",
+        third: "moveInCircle 40s linear infinite",
+        fourth: "moveHorizontal 40s ease infinite",
+        fifth: "moveInCircle 20s ease infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), addVariablesForColors,]
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow-custom': {
+          'text-shadow': '11px 11px 4px #AB86E5',
+        },
+      });
+    },
+  ],
+};
 
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
-  
- 
   addBase({
     ":root": newVars,
   });
 }
-
