@@ -3,6 +3,7 @@ import './globals.css';
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaInstagram, FaLinkedin, FaDiscord } from 'react-icons/fa';
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { WobbleCard } from "@/components/ui/wobble-card";
 
@@ -83,23 +84,37 @@ export default function Waitlist() {
   
         <div className="flex flex-col space-y-24 m-24">
           <div className="flex flex-col space-y-10">
-            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> Thank you </div>
-            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> for your interest in </div>
-            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> Clarity AI! </div>
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-7xl text-shadow-custom"> Thank you </div>
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-7xl text-shadow-custom"> for your interest in Clarity AI! </div>
           </div>
 
           <div className="flex flex-row space-x-44"> 
-            <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal">
-              <div> To be considered for early access, we kindly ask that you follow us on our social media accounts. <br/> As a <span className="font-semibold"> non-profit organization, </span> this helps us grow our community with your support <br/> and keep you updated with the latest news. </div>
-              <div> Please take a moment to follow us on Instagram and LinkedIn. <br/> Once you've done that, navigate back to this page to have get access for Clarity AI.  </div>
+            <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal leading-6">
+              <div> To be considered for early access, we kindly ask that you follow us on our social media accounts. <br/> As a <span className="font-semibold"> non-profit organization, </span> every follow helps us grow our community and continue providing <br/> valuable resources for students like you. 
+                    By joining our online community, you'll stay <br/> updated with the latest news, features, and developments about Clarity AI. </div>
+              <div> take a moment to follow us on Instagram and LinkedIn. These platforms are where we share <br/> exciting updates, helpful tips, and stories from other students who are benefiting from Clarity AI. </div>
+              <div> Once you've followed us, come back to this page to unlock early access and start using Clarity AI. </div>
               <div> We appreciate your support! </div>
             </div>
             
-            <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal">
-              <div className="font-semibold"> Step 1:  Follow Us </div>
-              <div className="font-semibold"> Step 2:  Verify </div>
+            <div className="flex flex-col space-y-10 text-[#2C174B] font-chillax font-normal">
+              <div className="flex flex-col space-y-4 justify-center items-center">
+                <div className="font-semibold text-lg text-center"> Step 1:  Follow Us </div>
+                <div className="font-normal"> Follow us on our LinkedIn, Discord, & Instagram! </div>
+                <div className="flex flex-row space-x-8 justify-center cursor-pointer"> 
+                  <FaLinkedin href="" className="text-4xl hover:-translate-y-2 duration-300"></FaLinkedin>
+                  <FaDiscord href="" className="text-4xl hover:-translate-y-2 duration-300"></FaDiscord>
+                  <FaInstagram href="" className="text-4xl hover:-translate-y-2 duration-300"></FaInstagram>
+                </div>
+              </div>
+              <div className="flex flex-col space-y-4 justify-center items-center">
+                <div className="font-semibold text-lg text-center"> Step 2:  Verify </div>
+                <div className="font-normal"> Have you followed Clarity AI on our socials? </div>
+                <Link href="/waitlistPage" className="font-chillax font-medium w-44 text-center text-[#E8DBFF] bg-[#64409D] rounded-full px-5 py-1 shadow-lg shadow-[#A781E2] border border-t-0 border-[#544072] cursor-pointer hover:-translate-y-2 duration-300"> Yes, Join Now! </Link>
+              </div>
             </div>
           </div>
+
         </div>
 
       </section>
