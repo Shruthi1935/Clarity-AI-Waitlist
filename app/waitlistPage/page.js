@@ -10,12 +10,12 @@ export default function Waitlist() {
     <section id="Waitlist"> 
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex items-center justify-center text-center px-4">
-          <div className="flex text-center items-center bg-[#E8DBFF] bg-opacity-20 p-36 rounded-lg">
+          <div className="flex text-center items-center bg-[#E8DBFF] bg-opacity-40 p-36 rounded-2xl">
             <div className="flex flex-col space-y-16">
-              <div className="font-chillax font-normal text-[#f2eaff] text-6xl drop-shadow-4xl"> Be the First to Unlock Clarity AI </div>
-              <div className="font-chillax font-normal text-[#f2eaff]"> We're almost ready to launch, and you're invited to be part of the first wave. 
+              <div className="font-chillax font-medium text-[#f2eaff] text-6xl drop-shadow-4xl"> Get in on the action first! </div>
+              <div className="font-chillax font-normal text-[#f2eaff]"> Excited for our launch? 
                 <br/> 
-                Drop your email below to join the waitlist, we'll keep you in the loop!
+                Sign up with your email to join the waitlist and stay updated.
               </div>                              
 
               <form className="flex flex-col space-y-6">
