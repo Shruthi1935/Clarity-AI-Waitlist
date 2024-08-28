@@ -1,8 +1,9 @@
 "use client";
 import './globals.css'; 
-import React from "react";
+import React, {useRef} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useInView } from 'framer-motion';
 import { FaInstagram, FaLinkedin, FaDiscord } from 'react-icons/fa';
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { WobbleCard } from "@/components/ui/wobble-card";
@@ -10,7 +11,41 @@ import { WobbleCard } from "@/components/ui/wobble-card";
 
 
 export default function Waitlist() {
-  
+
+  const learnMoreRef = useRef(null);
+  const thankYouRef = useRef(null);
+
+  const learnMoreInView = useInView(learnMoreRef, { once: true });
+  const thankYouInView = useInView(thankYouRef, { once: true });
+
+  // animation functions
+  const slideFromLeft = {
+    hidden: { opacity: 0, x: -500 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const slideFromRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const fadeZoomInOut = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 }, 
+    exit: { opacity: 0, scale: 0.8 }, 
+  };
+
+  const shake = {
+    visible: {
+      rotate: [0, -6, 6, -6, 6, 0], // keyframes
+      transition: {
+        delay: 2.0,
+        duration: 1.2, 
+        ease: "easeInOut"
+      },
+    },
+  };
+
   return (
     <>
       <section id="Hero"> 
@@ -36,9 +71,32 @@ export default function Waitlist() {
           <div className="flex flex-col space-y-10">
             <div className="flex flex-row space-x-48"> 
               <div className="flex flex-col space-y-11 font-axiforma font-bold text-[#E8DBFF] text-7xl"> 
-                <div className="text-shadow-custom">Your</div> 
-                <div className="text-shadow-custom">Ultimate</div>
-                <div className="text-shadow-custom">Campus Companion</div>
+              <motion.div 
+                  ref={learnMoreRef}
+                  initial="hidden"
+                  animate={learnMoreInView ? "visible" : "hidden"}
+                  variants={fadeZoomInOut}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="text-shadow-custom">Your
+                </motion.div> 
+                
+                <motion.div 
+                  ref={learnMoreRef}
+                  initial="hidden"
+                  animate={learnMoreInView ? "visible" : "hidden"}
+                  variants={fadeZoomInOut}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className="text-shadow-custom">Ultimate
+                </motion.div>
+                
+                <motion.div 
+                  ref={learnMoreRef}
+                  initial="hidden"
+                  variants={fadeZoomInOut}
+                  animate={learnMoreInView ? "visible" : "hidden"}
+                  transition={{ delay: 1.4, duration: 0.6 }}
+                  className="text-shadow-custom">Campus Companion
+                </motion.div>
               </div>
               <div className="font-chillax font-normal text-md text-right leading-7"> 
                 <div className="mb-6 text-[#2C174B] font-normal"> Clarity AI is like that one friend who always <br/> knows what's up. </div>
@@ -58,7 +116,13 @@ export default function Waitlist() {
               <button className="font-chillax font-medium w-44 text-[#E8DBFF] bg-[#64409D] rounded-full px-5 py-1 shadow-lg shadow-[#A781E2] border border-t-0 border-[#544072] cursor-pointer hover:-translate-y-3 duration-300"> Join Clarity AI </button>
             </a>
 
-            <div className="flex flex-row space-x-9">
+            <motion.div 
+              ref={learnMoreRef}
+              initial="hidden"
+              variants={shake}
+              animate={learnMoreInView ? "visible" : "hidden"}
+              className="flex flex-row space-x-9">
+
               <WobbleCard containerClassName="col-span-1 shadow-2xl shadow-[#A781E2] font-chillax font-normal">
                 <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Career Guidance and Networking </div>
                 <p className="mt-4 text-left text-[#2C174B] text-normal text-sm"> 
@@ -74,7 +138,7 @@ export default function Waitlist() {
                 <p className="mt-4 text-left text-[#2C174B] text-normal text-sm"> 
                   Join the waitlist now to be the first to experience Clarity AI, your ultimate companion for navigating university life with ease and connecting with peers. Get quick answers, make new friends, and enhance your campus experience—all in one app! </p>
               </WobbleCard>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -83,10 +147,16 @@ export default function Waitlist() {
       <section id="ThankYou" className="flex w-screen h-screen bg-[#CCB4FF]">
   
         <div className="flex flex-col space-y-24 m-24">
-          <div className="flex flex-col space-y-10">
-            <div className="font-axiforma font-bold text-[#E8DBFF] text-7xl text-shadow-custom"> Thank you </div>
+          <motion.div 
+            ref={thankYouRef}
+            initial="hidden"
+            animate={thankYouInView ? "visible" : "hidden"}
+            variants={slideFromLeft}
+            transition={{ duration: 1.2 }}
+            className="flex flex-col space-y-10">
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-7xl text-shadow-custom"> Thank you </div>    
             <div className="font-axiforma font-bold text-[#E8DBFF] text-7xl text-shadow-custom"> for your interest in Clarity AI! </div>
-          </div>
+          </motion.div>
 
           <div className="flex flex-row space-x-44"> 
             <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal leading-6">
@@ -97,24 +167,36 @@ export default function Waitlist() {
               <div> We appreciate your support! </div>
             </div>
             
-            <div className="flex flex-col space-y-10 text-[#2C174B] font-chillax font-normal">
+            <motion.div 
+              ref={thankYouRef}
+              initial="hidden"
+              variants={fadeZoomInOut}
+              animate={thankYouInView ? "visible" : "hidden"}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="flex flex-col space-y-10 text-[#2C174B] font-chillax font-normal">
+
               <div className="flex flex-col space-y-4 justify-center items-center">
-                <div className="font-semibold text-lg text-center"> Step 1:  Follow Us </div>
-                <div className="font-normal"> Follow us on our LinkedIn, Discord, & Instagram! </div>
-                <div className="flex flex-row space-x-8 justify-center cursor-pointer"> 
+                <div className="font-semibold text-xl text-center"> Step 1:  Follow Us </div>
+                <div className="font-normal"> Follow us on our socials, links below! </div>
+                <motion.div 
+                  ref={thankYouRef}
+                  initial="hidden"
+                  variants={shake}
+                  animate={thankYouInView ? "visible" : "hidden"}
+                  className="flex flex-row space-x-8 justify-center cursor-pointer"> 
                   <FaLinkedin href="" className="text-4xl hover:-translate-y-2 duration-300"></FaLinkedin>
                   <FaDiscord href="" className="text-4xl hover:-translate-y-2 duration-300"></FaDiscord>
                   <FaInstagram href="" className="text-4xl hover:-translate-y-2 duration-300"></FaInstagram>
-                </div>
+                </motion.div>
               </div>
               <div className="flex flex-col space-y-4 justify-center items-center">
-                <div className="font-semibold text-lg text-center"> Step 2:  Verify </div>
+                <div className="font-semibold text-xl text-center"> Step 2:  Verify </div>
                 <div className="font-normal"> Have you followed Clarity AI on our socials? </div>
                 <Link href="/waitlistPage" className="font-chillax font-medium w-44 text-center text-[#E8DBFF] bg-[#64409D] rounded-full px-5 py-1 shadow-lg shadow-[#A781E2] border border-t-0 border-[#544072] cursor-pointer hover:-translate-y-2 duration-300"> Yes, Join Now! </Link>
               </div>
-            </div>
-          </div>
+            </motion.div>
 
+          </div>
         </div>
 
       </section>
