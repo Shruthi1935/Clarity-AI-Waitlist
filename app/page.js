@@ -37,7 +37,18 @@ export default function Waitlist() {
 
   const shake = {
     visible: {
-      rotate: [0, -6, 6, -6, 6, 0], // keyframes
+      rotate: [0, -2, 2, -2, 2, -2, 2, 0], // keyframes
+      transition: {
+        delay: 2.0,
+        duration: 1.2, 
+        ease: "easeInOut"
+      },
+    },
+  };
+
+  const shakeTwo = {
+    visible: {
+      rotate: [0, -6, 6, -6, 6, -6, 6, 0], // keyframes
       transition: {
         delay: 2.0,
         duration: 1.2, 
@@ -181,7 +192,7 @@ export default function Waitlist() {
                 <motion.div 
                   ref={thankYouRef}
                   initial="hidden"
-                  variants={shake}
+                  variants={shakeTwo}
                   animate={thankYouInView ? "visible" : "hidden"}
                   className="flex flex-row space-x-8 justify-center cursor-pointer"> 
                   <FaLinkedin href="" className="text-4xl hover:-translate-y-2 duration-300"></FaLinkedin>
