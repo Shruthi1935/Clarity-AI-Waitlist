@@ -17,11 +17,13 @@ export default function Waitlist() {
           <div className="absolute z-50 inset-0 flex items-center justify-center text-center px-4">
             <div className="absolute left-3 top-0 text-[#E8DBFF] p-4"> LOGO </div>
             <div className="flex flex-col space-y-10 text-center items-center">
-              <div className="font-chillax font-normal text-[#E8DBFF]"> Get Answers, Connect, and Succeed with </div>
+
               <div className="font-chillax font-medium text-[#E8DBFF] text-9xl drop-shadow-4xl"> Clarity AI </div>
+              <div className="font-chillax font-normal text-[#E8DBFF]"> We're almost ready to launch, and you're invited to be part of the first wave. <br/> Drop your email to join the waitlist, we'll keep you in the loop! </div>
+
               <div className="flex flex-row space-x-6">
                 <a href="#LearnMore" className="font-chillax font-medium text-[#E8DBFF] border border-[#E8DBFF] rounded-full px-6 py-2 cursor-pointer hover:-translate-y-3 duration-300 shadow-4xl shadow-[#17125D]"> Learn More </a>
-                <a href="#Waitlist" className="font-chillax font-medium text-[#2C174B] bg-[#E8DBFF] rounded-full px-6 py-2 cursor-pointer hover:-translate-y-3 duration-300 shadow-4xl shadow-[#17125D]"> Early Access </a>
+                <a href="#ThankYou" className="font-chillax font-medium text-[#2C174B] bg-[#E8DBFF] rounded-full px-6 py-2 cursor-pointer hover:-translate-y-3 duration-300 shadow-4xl shadow-[#17125D]"> Early Access </a>
               </div>
             </div>
           </div>
@@ -51,58 +53,57 @@ export default function Waitlist() {
               </div>
             </div>
 
-            <a href="#Waitlist">
-              <button className="font-chillax font-medium w-44 text-[#E8DBFF] bg-[#64409D] rounded-full px-5 py-1 shadow-lg shadow-[#A781E2] border border-t-0 border-[#544072] cursor-pointer hover:-translate-y-3 duration-300"> Try Clarity AI </button>
+            <a href="#ThankYou">
+              <button className="font-chillax font-medium w-44 text-[#E8DBFF] bg-[#64409D] rounded-full px-5 py-1 shadow-lg shadow-[#A781E2] border border-t-0 border-[#544072] cursor-pointer hover:-translate-y-3 duration-300"> Join Clarity AI </button>
             </a>
 
             <div className="flex flex-row space-x-9">
               <WobbleCard containerClassName="col-span-1 shadow-2xl shadow-[#A781E2] font-chillax font-normal">
-                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Connect for Advice </div>
-                <p className="mt-4 text-left text-[#2C174B] text-normal"> 
-                  Reach out to fellow students for academic guidance or career advice. Tap into the collective wisdom of your campus community. 
-                </p>
+                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Career Guidance and Networking </div>
+                <p className="mt-4 text-left text-[#2C174B] text-normal text-sm"> 
+                  Receive personalized career advice and connect with classmates from your courses. Find study partners, join project teams, and explore internship and job opportunities by leveraging connections with peers who share your academic and career interests. </p>
               </WobbleCard>
               <WobbleCard containerClassName="col-span-1 shadow-2xl shadow-[#A781E2] font-chillax font-normal">
-                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Build Study Groups </div>
-                <p className="mt-4 text-left text-[#2C174B] text-normal"> 
-                  Form or join study groups with classmates to collaborate and learn together. Boost your understanding and make studying more enjoyable!
-                </p>
+                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Instant Answers, Anytime: </div>
+                <p className="mt-4 text-left text-[#2C174B] text-normal text-sm"> 
+                  Got a question about campus life, course details, or university events? Our AI-powered <br/> chatbot is available 24/7 to provide quick and accurate answers, whether you need to find the nearest study spot or learn about upcoming activities.</p>
               </WobbleCard>
               <WobbleCard containerClassName="col-span-1 shadow-2xl shadow-[#A781E2] font-chillax font-normal">
-                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Make New Friends </div>
-                <p className="mt-4 text-left text-[#2C174B] text-normal"> 
-                  Grow your circle by connecting with classmates who share your courses and major. Discover new friends and build your network!                
-                </p>
+                <div className="text-left text-balance font-semibold tracking-[-0.015em] text-[#2C174B] text-xl"> Join Now! </div>
+                <p className="mt-4 text-left text-[#2C174B] text-normal text-sm"> 
+                  Join the waitlist now to be the first to experience Clarity AI, your ultimate companion for navigating university life with ease and connecting with peers. Get quick answers, make new friends, and enhance your campus experience—all in one app! </p>
               </WobbleCard>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="Waitlist"> 
-        <BackgroundGradientAnimation>
-          <div className="absolute z-50 inset-0 flex items-center justify-center text-center px-4">
-          <div className="flex text-center items-center bg-[#E8DBFF] bg-opacity-50 p-32 rounded-xl">
-            <div className="flex flex-col space-y-10">
-              <div className="font-chillax font-medium text-[#ece0ff] text-5xl drop-shadow-4xl"> Be the First to Unlock Clarity AI </div>
-              <div className="font-chillax font-normal text-[#ece0ff]"> We're almost ready to launch, and you're invited to be part of the first wave. 
-                <br/> 
-                Drop your email below to join the waitlist, we'll keep you in the loop!
-              </div>                              
 
+      <section id="ThankYou" className="flex w-screen h-screen bg-[#CCB4FF]">
+  
+        <div className="flex flex-col space-y-24 m-24">
+          <div className="flex flex-col space-y-10">
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> Thank you </div>
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> for your interest in </div>
+            <div className="font-axiforma font-bold text-[#E8DBFF] text-6xl text-shadow-custom"> Clarity AI! </div>
+          </div>
 
-
-              
-              <form className="flex flex-col space-y-6">
-                <input required type="text" name="name" placeholder="Full Name" className="p-2 border-b border-[#ece0ff] bg-transparent" />
-                <input required type="text" name="email" placeholder="Email" className="p-2 border-b border-[#ece0ff] bg-transparent" />
-                <button className="font-chillax text-xl font-medium text-[#ece0ff] px-6 py-1 rounded-full cursor-pointer hover:-translate-y-2 duration-300 shadow-4xl shadow-[#17125D]"> Let's Go </button>
-              </form>
+          <div className="flex flex-row space-x-44"> 
+            <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal">
+              <div> To be considered for early access, we kindly ask that you follow us on our social media accounts. <br/> As a <span className="font-semibold"> non-profit organization, </span> this helps us grow our community with your support <br/> and keep you updated with the latest news. </div>
+              <div> Please take a moment to follow us on Instagram and LinkedIn. <br/> Once you've done that, navigate back to this page to have get access for Clarity AI.  </div>
+              <div> We appreciate your support! </div>
+            </div>
+            
+            <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal">
+              <div className="font-semibold"> Step 1:  Follow Us </div>
+              <div className="font-semibold"> Step 2:  Verify </div>
             </div>
           </div>
-          </div>
-        </BackgroundGradientAnimation>
+        </div>
+
       </section>
+
     </>
   );
 }
