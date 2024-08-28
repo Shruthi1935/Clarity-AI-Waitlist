@@ -92,8 +92,8 @@ export default function Waitlist() {
             <div className="flex flex-col space-y-8 text-[#2C174B] font-chillax font-normal leading-6">
               <div> To be considered for early access, we kindly ask that you follow us on our social media accounts. <br/> As a <span className="font-semibold"> non-profit organization, </span> every follow helps us grow our community and continue providing <br/> valuable resources for students like you. 
                     By joining our online community, you'll stay <br/> updated with the latest news, features, and developments about Clarity AI. </div>
-              <div> take a moment to follow us on Instagram and LinkedIn. These platforms are where we share <br/> exciting updates, helpful tips, and stories from other students who are benefiting from Clarity AI. </div>
-              <div> Once you've followed us, come back to this page to unlock early access and start using Clarity AI. </div>
+              <div> Take a moment to follow us on Instagram, LinkedIn, & Discord. These platforms are where we share <br/> exciting updates and helpful information. </div>
+              <div> Once you've followed us, navigate back to this page to unlock early access and start using our app. </div>
               <div> We appreciate your support! </div>
             </div>
             
