@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Clarity AI Waitlist",
-  description: "Waitlist",
+  description: "Waitlist Website for Clarity AI",
 };
 
 export default function RootLayout({ children }) {

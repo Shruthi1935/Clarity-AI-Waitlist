@@ -195,9 +195,15 @@ export default function Waitlist() {
                   variants={shakeTwo}
                   animate={thankYouInView ? "visible" : "hidden"}
                   className="flex flex-row space-x-8 justify-center cursor-pointer"> 
-                  <FaLinkedin href="" className="text-4xl hover:-translate-y-2 duration-300"></FaLinkedin>
-                  <FaDiscord href="" className="text-4xl hover:-translate-y-2 duration-300"></FaDiscord>
-                  <FaInstagram href="" className="text-4xl hover:-translate-y-2 duration-300"></FaInstagram>
+                  <a href="https://www.linkedin.com/in/clarity-ai-016563327/" target="_blank" rel="noopener noreferrer"> 
+                    <FaLinkedin href="" className="text-4xl hover:-translate-y-2 duration-300"></FaLinkedin>
+                  </a>
+                  <a href="" target="_blank" rel="noopener noreferrer"> 
+                    <FaDiscord href="" className="text-4xl hover:-translate-y-2 duration-300"></FaDiscord>
+                  </a>
+                  <a href="https://www.instagram.com/clarity_ai/?hl=en" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="text-4xl hover:-translate-y-2 duration-300" />
+                  </a>                
                 </motion.div>
               </div>
               <div className="flex flex-col space-y-4 justify-center items-center">
