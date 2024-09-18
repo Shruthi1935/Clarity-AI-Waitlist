@@ -62,7 +62,7 @@ export default function Waitlist() {
       <section id="Hero"> 
         <BackgroundGradientAnimation>
           <div className="absolute z-50 inset-0 flex items-center justify-center text-center px-4">
-            <div className="absolute left-3 top-0 text-[#E8DBFF] p-4"> LOGO </div>
+            <div className="absolute left-3 top-0 text-[#E8DBFF] p-4"> LOGO HERE </div>
             <div className="flex flex-col space-y-10 text-center items-center">
 
               <div className="font-chillax font-medium text-[#E8DBFF] text-9xl drop-shadow-4xl"> Clarity AI </div>
